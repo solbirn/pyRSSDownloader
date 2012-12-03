@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainUi</class>
+ <widget class="QMainWindow" name="MainUi">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>821</width>
+    <height>770</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>50</weight>
+    <bold>false</bold>
+    <underline>false</underline>
+   </font>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>pyRSSDownloader</string>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="centralwidget_functions" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="functions_search_input">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Search feeds</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="functions_addfeed_easy_button">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Add Feed (Easy)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="functions_addfeed_manual_button">
+         <property name="text">
+          <string>Add Feed (Manual)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="functions_updatefeeds">
+         <property name="text">
+          <string>Update All Feeds</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabs">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_feed">
+       <property name="acceptDrops">
+        <bool>true</bool>
+       </property>
+       <attribute name="title">
+        <string>Feeds</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="1">
+         <widget class="QListWidget" name="rssitemlist">
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::ExtendedSelection</enum>
+          </property>
+          <property name="textElideMode">
+           <enum>Qt::ElideMiddle</enum>
+          </property>
+          <property name="isWrapping" stdset="0">
+           <bool>false</bool>
+          </property>
+          <property name="resizeMode">
+           <enum>QListView::Adjust</enum>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QTreeWidget" name="feedlist">
+          <property name="maximumSize">
+           <size>
+            <width>215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::EditKeyPressed</set>
+          </property>
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::DropOnly</enum>
+          </property>
+          <property name="defaultDropAction">
+           <enum>Qt::LinkAction</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>false</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::ExtendedSelection</enum>
+          </property>
+          <property name="indentation">
+           <number>15</number>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <attribute name="headerVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_settings">
+       <attribute name="title">
+        <string>Settings</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="settings_basic_group">
+          <property name="title">
+           <string>Basic Settings</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="basic_dlfolder_label">
+             <property name="text">
+              <string>RSS Download Folder</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="basic_dlfolder_input">
+             <property name="text">
+              <string>C:\RSSFeedDownloads</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QPushButton" name="basic_db_reload_button">
+             <property name="text">
+              <string>Force Database Reload</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="basic_autotrack_input">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Automatically track when feeds are on hold</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="basic_debuglog_input">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Enable debug logging</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="settings_sqlite_group">
+          <property name="title">
+           <string>SQLite Settings</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="sqlite_dbpath_input">
+             <property name="text">
+              <string>pyrssdb</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="sqlite_dbpath_label">
+             <property name="text">
+              <string>Database Path</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="settings_mysql_group">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="title">
+           <string>MySQL Settings (Shared Database)</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="9" column="0">
+            <widget class="QLabel" name="mysql_dbname_label">
+             <property name="text">
+              <string>Database Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLineEdit" name="mysql_dbname_input">
+             <property name="text">
+              <string>pyrssdl</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="0">
+            <widget class="QLineEdit" name="mysql_username_input">
+             <property name="text">
+              <string>pyrss</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <widget class="QLineEdit" name="mysql_password_input">
+             <property name="inputMethodHints">
+              <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText</set>
+             </property>
+             <property name="text">
+              <string>pyrss123</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLineEdit" name="mysql_port_input">
+             <property name="text">
+              <string>3306</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="mysql_port_label">
+             <property name="text">
+              <string>Port</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLineEdit" name="mysql_address_input">
+             <property name="text">
+              <string>localhost</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="mysql_address_label">
+             <property name="text">
+              <string>Address</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="0">
+            <widget class="QLabel" name="mysql_username_label">
+             <property name="text">
+              <string>Username</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
+            <widget class="QLabel" name="mysql_password_label">
+             <property name="text">
+              <string>Password</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="mysql_usemysql_input">
+             <property name="text">
+              <string>Use MySQL instead of SQLite (will attempt to transfer database on first connection)</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_debug">
+       <attribute name="title">
+        <string>Debug</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="debug_buttons">
+          <property name="title">
+           <string>Debug Panel</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="debug_print_iros">
+             <property name="text">
+              <string>Print IROs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="debug_print_threads">
+             <property name="text">
+              <string>Print Threads</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="debug_textedit">
+          <property name="plainText">
+           <string>Waiting for action...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionRSSAddFeed">
+   <property name="text">
+    <string>Add RSS Feed</string>
+   </property>
+   <property name="toolTip">
+    <string>Add a new RSS feed</string>
+   </property>
+  </action>
+  <action name="actionRSSRemoveFeed">
+   <property name="text">
+    <string>Remove RSS Feed</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove this RSS feed</string>
+   </property>
+  </action>
+  <action name="actionRSSUpdateFeed">
+   <property name="text">
+    <string>Update RSS Feed</string>
+   </property>
+   <property name="toolTip">
+    <string>Update selected RSS feed</string>
+   </property>
+  </action>
+  <action name="actionRSSUpdateAllFeeds">
+   <property name="text">
+    <string>Update All RSS Feeds</string>
+   </property>
+   <property name="toolTip">
+    <string>Update all RSS feeds</string>
+   </property>
+  </action>
+  <action name="actionDLItem">
+   <property name="text">
+    <string>Download Item(s)</string>
+   </property>
+   <property name="toolTip">
+    <string>Download Item(s)</string>
+   </property>
+  </action>
+  <action name="actionListDLItems">
+   <property name="text">
+    <string>Download Item(s)</string>
+   </property>
+   <property name="toolTip">
+    <string>Download Item(s)</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>basic_db_reload_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainUi</receiver>
+   <slot>SettingsDBReload()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>basic_autotrack_input</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainUi</receiver>
+   <slot>SettingsBasicChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>basic_dlfolder_input</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainUi</receiver>
+   <slot>SettingsBasicChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRSSAddFeed</sender>
+   <signal>triggered()</signal>
+   <receiver>MainUi</receiver>
+   <slot>RSSAddFeedE()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRSSRemoveFeed</sender>
+   <signal>triggered()</signal>
+   <receiver>MainUi</receiver>
+   <slot>RSSRemoveFeed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>feedlist</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>MainUi</receiver>
+   <slot>RSSContextMenu(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rssitemlist</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>MainUi</receiver>
+   <slot>RSSFeedItemContextMenu(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDLItem</sender>
+   <signal>triggered()</signal>
+   <receiver>MainUi</receiver>
+   <slot>SettingsBasicChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>functions_addfeed_easy_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainUi</receiver>
+   <slot>RSSAddFeedE()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>415</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>functions_addfeed_manual_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainUi</receiver>
+   <slot>RSSAddFeedM()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>517</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>functions_updatefeeds</sender>
+   <signal>clicked()</signal>
+   <receiver>MainUi</receiver>
+   <slot>RSSUpdateAllFeeds()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>619</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>debug_print_iros</sender>
+   <signal>clicked()</signal>
+   <receiver>MainUi</receiver>
+   <slot>DebugPrintIROs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>183</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>debug_print_threads</sender>
+   <signal>clicked()</signal>
+   <receiver>MainUi</receiver>
+   <slot>DebugPrintThreads()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>497</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>feedlist</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>MainUi</receiver>
+   <slot>RSSActivateDetails(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDLItem</sender>
+   <signal>triggered()</signal>
+   <receiver>MainUi</receiver>
+   <slot>DLDLItems()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>410</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>DLForceUpdate()</slot>
+  <slot>DLSetHoldStatus()</slot>
+  <slot>DLStartChanged()</slot>
+  <slot>DLUpdateIntChanged()</slot>
+  <slot>DLPrefQualityChanged()</slot>
+  <slot>RSSAddFeedE()</slot>
+  <slot>RSSRemoveFeed()</slot>
+  <slot>SettingsDBChanged()</slot>
+  <slot>SettingsDBReload()</slot>
+  <slot>SettingsBasicChanged()</slot>
+  <slot>DLPullDLSettings()</slot>
+  <slot>RSSContextMenu(QPoint)</slot>
+  <slot>RSSFeedItemContextMenu(QPoint)</slot>
+  <slot>RSSAddFeedM()</slot>
+  <slot>RSSUpdateAllFeeds()</slot>
+  <slot>DebugPrintIROs()</slot>
+  <slot>DebugPrintThreads()</slot>
+  <slot>RSSActivateDetails(QTreeWidgetItem*,int)</slot>
+  <slot>DLDLItems()</slot>
+ </slots>
+</ui>

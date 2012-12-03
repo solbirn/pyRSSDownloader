@@ -1,0 +1,43 @@
+About
+------
+pyRSSDownloader in an application (or script) which will keep track of and allow you do download items from RSS Feed.
+It is licensed under GPL v2. A copy of the license is included in this repository (see files: LICENSE and COPYING).
+
+Requirements
+-------------
+IT IS IN A VERY EARLY DEV STAGE SO DON'T USE IF YOU ARE UNCOMFORTABLE WITH THAT KNOWLEDGE.
+I AM NOT RESPONSIBLE FOR ANY DAMAGE DONE BY THE CODE. READ THE SOURCE YOURSELF BEFORE EXECUTING TO VERIFY IT IS COMPATIBLE WITH YOUR EXECUTION ENVIRONMENT.
+I AM NOT RESPONSIBLE FOR IMPROPER OR ILLEGAL USE CODE THIS CODE. IT IS PROVIDED FOR LEGAL USAGE ONLY.
+
+To run it requires at least one plugin, which will not be commited to the repository for the time being.
+It is possible to create you own plugin, but it is a bit complex and I am not able to create documentation right now. Eventually...*
+For the most part - for now - the code is just good for referencing/forking.
+Only the SQLite driver is commited for the time being. MySQL to come, and perhaps others.
+Autodownloader to come with many features(in background, perhaps it will optionally be able to run as daemon/service backend).
+
+It is currently Installer-less.
+
+The following software must be installed for the program to work:
+-Python (http://python.org) (Tested with 2.7 x86 and x64 builds)
+-pyqt4 (http://www.riverbankcomputing.com/software/pyqt/download - Be sure it corresponds to the python build you have installed)
+
+Run
+----
+Add a plugin to the plugins folder.
+Run pyRSSDownloader.py (rename to .pyw to hide the console window)
+
+TODO
+-----
+-Fix GUI crashes (need to move gui exectuation to main thread)
+-Cleanup, streamline and optimize the code a whole lot
+-Implement settings save/load for all settings (not just db)
+-Proper error-handling/logging
+-Commenting
+-Unit Testing
+-Plugins (and samples)
+-Autodownloader (includes many many per feed settings and features - some implemented or added by plugins)
+-Installer
+-Updater
+-MySQL (and potentially other db types) support
+-DB Import/Export
+-A lot more

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RSSAddFeedDialog</class>
+ <widget class="QDialog" name="RSSAddFeedDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>589</width>
+    <height>410</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add an RSS feed</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabs">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Easy</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QWidget" name="addfeed_easy_widget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLineEdit" name="functions_findrss_easy_input">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Enter a supported &quot;easy add&quot; name here</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="functions_findrss_easy">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Find Show</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="tab_easy_list"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Advanced</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="functions_findrss_adv_input"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="function_findrss_adv">
+            <property name="text">
+             <string>Add Feed</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QListWidget" name="tab_adv_list"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Advanced (batch)</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Abort|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>functions_findrss_adv_input</tabstop>
+  <tabstop>function_findrss_adv</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>tab_easy_list</tabstop>
+  <tabstop>functions_findrss_easy</tabstop>
+  <tabstop>functions_findrss_easy_input</tabstop>
+  <tabstop>tab_adv_list</tabstop>
+  <tabstop>tabs</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>RSSAddFeedDialog</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>RSSAddFeedDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>functions_findrss_easy</sender>
+   <signal>clicked()</signal>
+   <receiver>RSSAddFeedDialog</receiver>
+   <slot>RSSAddFeedByName()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>521</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>function_findrss_adv</sender>
+   <signal>clicked()</signal>
+   <receiver>RSSAddFeedDialog</receiver>
+   <slot>RSSAddFeedByURL()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>520</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>RSSAddFeedByName()</slot>
+  <slot>RSSAddFeedByURL()</slot>
+  <slot>RSSAddFeedByURLBatch()</slot>
+  <slot>save()</slot>
+ </slots>
+</ui>
